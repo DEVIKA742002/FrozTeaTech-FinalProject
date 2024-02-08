@@ -1,0 +1,56 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+    <div class="logo">
+      
+        <img src="assets\images\cofee logo.png" alt="Logo" class="img-responsive">
+     
+  </div>
+  
+   
+     <div class="spacer"></div>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/home">Home</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/myprofile">My Profile</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/menu">Menu</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/myorders">My Orders</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/mypayments">My Payments</a>
+    <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+   </mat-toolbar>
+<div class="main-conatiner" style="
+background-image: url('assets/images/wel.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+height: 90vh;
+overflow: hidden;">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <h2 class="text-center my-4">Payments</h2>
+            
+            <div class="row">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="text-center">Payment Id</th>
+                            <th class="text-center">Order Id</th>
+                            <th class="text-center">Customer Name</th>
+                            <th class="text-center">Order Date</th>
+                            <th class="text-center">Total Amount</th>
+                            <th class="text-center">Paid Amount</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let temppay of payment | paginate: { itemsPerPage: count, currentPage: p }">
+                        <td class="text-center">{{ temppay.paymentId }}</td>
+                        <td class="text-center">{{ temppay.orderId }}</td>
+                        <td class="text-center">{{ temppay.customer.username }}</td>
+                        <td class="text-center">{{ temppay.paidDate }}</td>
+                        <td class="text-center">{{ temppay.totalPrice }}</td>
+                        <td class="text-center">{{ temppay.paidAmount }}</td>
+                    </tr>
+                </table>
+                <div class="text-right mt-3">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

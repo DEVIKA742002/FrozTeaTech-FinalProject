@@ -1,0 +1,112 @@
+<section class="ftco-section" style="
+  background-image: url('assets/images/c1.jpg');
+ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh ;
+  background-attachment: fixed;"
+>
+  <div class="container-fluid" style="padding-top: 90px;">
+    <div class="row justify-content-left" style="padding-left: 120px; padding-right: 100px;">
+      <div class="col-md-6 text-center mb-5" >
+        <h2 class="heading-section" style="margin-top: 50px" >
+          <strong style="font-size: 45px;">Welcome to FrozTeaTech!...</strong>
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-left" style="padding-right: 100px;" >
+      <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0" style="padding: 20px 40px; margin-bottom: 10px;margin-right: 50px; border-radius: 50%; padding-right: 40px;">
+          <form
+            form #spForm="ngForm"
+            (ngSubmit)="Getlogin()"
+            class="signin-form"
+            style="
+              padding: 20px 40px;
+              margin-bottom: 10px;
+              border-radius: 50%;
+            "
+          >
+            <div class="form-group" style="color: black;">
+              <label for="username"><strong>User Name:</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="User Name"
+                [(ngModel)]="customer.username"
+                placeholder="Enter User Name"
+                minlength="5"
+                required
+              />
+              <div class="error-message" *ngIf="spForm.controls['User Name'].invalid && (spForm.controls['User Name'].dirty || spForm.controls['User Name'].touched)">
+                <div *ngIf="spForm.controls['User Name'].errors['required']">User Name is required.</div>
+                <div *ngIf="spForm.controls['User Name'].errors['minlength']">User Name must contain at least 5 characters.</div>
+              </div>
+            </div>
+            <div class="form-group" style="color: black;">
+              <label for="password"><strong>Password:</strong></label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="customer.userpassword"
+                placeholder="Enter User Password"
+                minlength="6"
+                required
+              />
+              <div class="error-message" *ngIf="spForm.controls['password'].invalid && (spForm.controls['password'].dirty || spForm.controls['password'].touched)">
+                <div *ngIf="spForm.controls['password'].errors['required']">Password is required.</div>
+                <div *ngIf="spForm.controls['password'].errors['minlength']">Password must contain at least 6 characters.</div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="form-control btn btn-primary submit px-3"
+              [disabled]="!spForm.valid"
+              style="
+                background-image: linear-gradient(
+                  to right,
+
+                  #1ee30c 5%,
+                  rgb(20, 192, 20) 100%
+                );
+                margin-top: 5px;
+              "
+            >
+              Login
+            </button>
+            <br><br>
+            <p class="bottom" style="color: black;">
+              Don't have an account?
+              <a
+                class="bottom"
+                [routerLink]="['/customer/signup']"
+                style="
+                  color: blue;
+                  text-decoration: none;
+                  padding-left: 5px;
+                "
+              >
+                Register here
+              </a>
+            </p>
+            <p>
+              <a
+                class="bottom"
+                [routerLink]="['/']"
+                style="color:rgb(248, 53, 53);"
+              >
+                <!-- <button type="button" > -->
+                  <strong>Back to Home....</strong>
+                <!-- </button> -->
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

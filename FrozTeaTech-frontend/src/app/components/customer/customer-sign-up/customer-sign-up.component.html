@@ -1,0 +1,83 @@
+<div class="main-container" style="
+background-image: url('assets/images/2.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+">
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder" >
+                <div class="form-content"  >
+                    <div class="form-items" style="text-align: center;">
+                        <h3>Register Today</h3>
+                        <p>Fill in the data below.</p>
+                        <form (ngSubmit)="SaveUsers()" #signupForm="ngForm" class="signup-form">
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="customerName" [(ngModel)]="customer.customerName" name="customerName" placeholder="Full Name" required
+                                    pattern="^[A-Za-z]{4,}$">
+                                <div class="error-message" *ngIf="signupForm.controls['customerName'].invalid && (signupForm.controls['customerName'].dirty || signupForm.controls['customerName'].touched)">
+                                    <div *ngIf="signupForm.controls['customerName'].errors['required']">Customer Name is required.</div>
+                                    <div *ngIf="signupForm.controls['customerName'].errors['pattern']">Customer Name must contain more than 4 letters, no digits.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="customerPhone" [(ngModel)]="customer.customerPhone" name="customerPhone" placeholder="Customer Phone" required
+                                    pattern="^[0-9]{10}$">
+                                <div class="error-message" *ngIf="signupForm.controls['customerPhone'].invalid && (signupForm.controls['customerPhone'].dirty || signupForm.controls['customerPhone'].touched)">
+                                    <div *ngIf="signupForm.controls['customerPhone'].errors['required']">Customer Phone is required.</div>
+                                    <div *ngIf="signupForm.controls['customerPhone'].errors['pattern']">Customer Phone must contain 10 digits.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" id="email" [(ngModel)]="customer.email" name="email" placeholder="Email" required
+                                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                                <div class="error-message" *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                                    <div *ngIf="signupForm.controls['email'].errors['required']">Email is required.</div>
+                                    <div *ngIf="signupForm.controls['email'].errors['pattern']">Customer Email must contain '@' and more than 4 letters.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="username" [(ngModel)]="customer.username" name="username" placeholder="UserName" required
+                                    pattern="^(?=\S*[a-zA-Z])(?=\S*[0-9])[A-Za-z\d]{4,}$">
+                                <div class="error-message" *ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)">
+                                    <div *ngIf="signupForm.controls['username'].errors['required']">UserName is required.</div>
+                                    <div *ngIf="signupForm.controls['username'].errors['pattern']">UserName must contain more than 4 characters, only letters and digits, hybrid is allowed.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="password" id="password" [(ngModel)]="customer.userpassword" name="password" placeholder="Password" required
+                                    pattern="^.{6,}$">
+                                <div class="error-message" *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                                    <div *ngIf="signupForm.controls['password'].errors['required']">Password is required.</div>
+                                    <div *ngIf="signupForm.controls['password'].errors['pattern']">Password must contain more than 6 characters.</div>
+                                </div>
+                            </div>
+
+                            <button id="submit" class="form-button mt-3" type="submit" [disabled]="signupForm.invalid" >
+                                Sign Up
+                            </button>
+
+                            <button type="reset" class="reset-button-blue" >
+                                Reset
+                            </button>
+
+                            <br>
+                            <p class="bottom" style="margin-top: 20px;">
+                                Already Registered?
+                                <a class="bottom" [routerLink]="['/customer/login']" style="color: rgb(37, 252, 241);">
+                                    Login here
+                                </a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

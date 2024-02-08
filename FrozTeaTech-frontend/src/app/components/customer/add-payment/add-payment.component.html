@@ -1,0 +1,74 @@
+<div class="container p-0">
+  <div class="card px-4">
+    <p class="h8 py-3">Payment Details</p>
+    <form (ngSubmit)="onSubmit()" #paymentForm="ngForm">
+      <div class="row gx-3">
+        <div class="col-12">
+          <div class="d-flex flex-column">
+            <p class="text mb-1">Person Name</p>
+            <input class="form-control mb-3" type="text" placeholder="Name" [(ngModel)]="payment.nameOnCard"
+              name="nameOnCard" minlength="5" required>
+            <div class="error-message"
+              *ngIf="paymentForm.controls['nameOnCard'].invalid && (paymentForm.controls['nameOnCard'].dirty || paymentForm.controls['nameOnCard'].touched)">
+              <div *ngIf="paymentForm.controls['nameOnCard'].errors['required']">Name on Card is required.</div>
+              <div *ngIf="paymentForm.controls['nameOnCard'].errors['minlength']">Name on Card must contain at least 5
+                letters.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="d-flex flex-column">
+            <p class="text mb-1">Card Number</p>
+            <input class="form-control mb-3" type="text" placeholder="1234 5678 435678" [(ngModel)]="payment.cardNumber"
+              name="cardNumber" minlength="16" maxlength="16" required pattern="[0-9]*">
+            <div class="error-message"
+              *ngIf="paymentForm.controls['cardNumber'].invalid && (paymentForm.controls['cardNumber'].dirty || paymentForm.controls['cardNumber'].touched)">
+              <div *ngIf="paymentForm.controls['cardNumber'].errors['required']">Card Number is required.</div>
+              <div *ngIf="paymentForm.controls['cardNumber'].errors['pattern']">Card Number must contain only digits.
+              </div>
+              <div
+                *ngIf="paymentForm.controls['cardNumber'].errors['minlength'] || paymentForm.controls['cardNumber'].errors['maxlength']">
+                Card Number must be 16 digits.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-flex flex-column">
+            <p class="text mb-1">Expiry</p>
+            <input class="form-control mb-3" type="text" placeholder="MM/YYYY" [(ngModel)]="payment.expYear"
+              name="expYear" minlength="7" maxlength="7" required pattern="^(0[1-9]|1[0-2])\/\d{4}$">
+            <div class="error-message"
+              *ngIf="paymentForm.controls['expYear'].invalid && (paymentForm.controls['expYear'].dirty || paymentForm.controls['expYear'].touched)">
+              <div *ngIf="paymentForm.controls['expYear'].errors['required']">Expiry is required.</div>
+              <div *ngIf="paymentForm.controls['expYear'].errors['pattern']">Expiry must be in MM/YYYY format.</div>
+              <div
+                *ngIf="paymentForm.controls['expYear'].errors['minlength'] || paymentForm.controls['expYear'].errors['maxlength']">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-flex flex-column">
+            <p class="text mb-1">CVV/CVC</p>
+            <input class="form-control mb-3 pt-2" type="password" placeholder="***" [(ngModel)]="payment.cvv" name="cvv"
+              minlength="3" maxlength="3" required pattern="[0-9]*">
+            <div class="error-message"
+              *ngIf="paymentForm.controls['cvv'].invalid && (paymentForm.controls['cvv'].dirty || paymentForm.controls['cvv'].touched)">
+              <div *ngIf="paymentForm.controls['cvv'].errors['required']">CVV/CVC is required.</div>
+              <div *ngIf="paymentForm.controls['cvv'].errors['pattern']"></div>
+              <div
+                *ngIf="paymentForm.controls['cvv'].errors['minlength'] || paymentForm.controls['cvv'].errors['maxlength']">
+                CVV/CVC must be 3 digits.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary mb-3" type="submit" [disabled]="!paymentForm.valid">
+            <span class="ps-3">Pay {{ payment.paidAmount }} ₹</span>
+            <span class="fas fa-arrow-right"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

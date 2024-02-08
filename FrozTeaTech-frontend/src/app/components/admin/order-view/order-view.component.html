@@ -1,0 +1,107 @@
+<section>
+    <header>
+        <div class="logosec">
+            <img src="assets/images/cofee logo.png" class="icn menuicn" id="menuicn" alt="menu-icon">
+            <div class="logo">FrozTeaTech!...</div>
+        </div>
+        <h4 style="margin-left: 70%"></h4>
+        <div class="dp">
+
+            <img src="assets/images/vector-users-icon.jpg" class="dpicn" alt="dp">
+
+        </div>
+    </header>
+    <div class="main-container" style="background-image: url(assets/images/ad8.png);background-size: cover;">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <a routerLink="/admin/home">
+                            <img src="assets/images/dashboard.png" class="nav-img" alt="dashboard">
+                            <h3 style="margin-left: 20px">Dashboard</h3>
+                        </a>
+                    </div>
+                    <div class="option2 nav-option">
+                        <a routerLink="/admin/customer/veiwall">
+                            <img src="assets/images/customerlogo.png" class="nav-img" alt="articles">
+                            <h3 style="margin-left: 20px">Show Customer</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option3">
+                        <a routerLink="/admin/order/veiwall">
+                            <img src="assets/images/provider.png" class="nav-img" alt="report">
+                            <h3 style="margin-left: 20px">Show Order</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option4">
+                        <a routerLink="/admin/payment/veiwall">
+                            <img src="assets/images/provider1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Payments</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option5">
+                        <a routerLink="/admin/menu">
+                            <img src="assets/images/menu icon.jpg" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Menu</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option6">
+                        <a (click)="logout()">
+                            <img src="assets/images/logout.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Logout</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="title-container">
+                <h3>All Orders</h3>
+            </div>
+            <div class="box-container">
+                
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                          <table class='table'>
+                            <thead>
+                                <tr class='table-dark'>
+                                    <th class="center" >ORDER ID</th>
+                                    <th class="center">CUSTOMER</th>
+                                    <th class="center">ORDER DATE</th>
+                                    <th class="center">ORDER TIME</th>
+                                    <th class="center">MENU ITEM</th>
+                                    <th class="center">QUANTITY</th>
+                                    <th class="center">TOTAL PRICE</th>
+                                    <th class="center">STATUS</th>
+                                    <th></th>
+                                    
+                                </tr>
+                        
+                            </thead>
+                            <tr *ngFor="let temporder of order  | paginate: { itemsPerPage: count, currentPage: p }">
+                                <td class="center">{{temporder.orderId}}</td>
+                                <td class="center">{{temporder.customer.username}}</td>
+                                <td class="center">{{temporder.orderDate}}</td>
+                                <td class="center">{{temporder.orderTime}}</td>
+                                <td class="center">{{temporder.menu.fname}}</td>
+                                <td class="center">{{temporder.quantity}}</td>
+                                <td class="center">{{temporder.totalPrice}}</td>
+                                <td class="center">{{temporder.status}}</td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-md btn-danger" (click)="deleteOrder(temporder.orderId)">Delete</button>
+                                </td>
+                            </tr>
+                        </table> 
+                        <div class="text-right" style="padding-top: 20px;">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>

@@ -1,0 +1,31 @@
+<div class="main-content" style="
+background-image: url('assets/images/menubg2.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+">
+<div style="padding-right: 12%;">
+    <div class="container my-5 order-container" *ngIf="order">
+        <h2 class="text-center">Order Details</h2>
+        <div class="order-details text-center mt-4">
+            <img class="item-image img-fluid rounded" [src]="order.menu.img" alt="Item Image">
+            <p><strong>Quantity:</strong> {{ quantity }}</p>
+        </div>
+        <p class="text-center"><strong>Total Price:</strong> {{ totalprice }}</p>
+    </div>
+    <div class="container my-5 payment-options" *ngIf="order">
+        <h3 class="text1">Choose Payment Method</h3>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary mx-1" (click)="redirectToPayment('cod')">Cash on Delivery</button>
+            <button class="btn btn-success mx-2" (click)="redirectToPayment('online')">Online Payment</button>
+            <div class="mx-2"></div>
+            <div class="mx-2"></div>
+            <div class="mx-2"></div>
+            <div class="mx-2"></div>
+            <button class="btn btn-danger mx-3" (click)="deleteOrder()">Cancel Order</button>
+        </div>
+    </div>
+    
+    
+</div>
+</div>

@@ -1,0 +1,73 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+*{
+    overflow: hidden; 
+}
+a{
+    text-decoration: none;
+}
+.spacer {
+    flex: 1 1 auto;
+  }
+  .logo{
+    margin-left: 0px;
+    margin-top: 30px;
+    width: 90px;
+    height: 80px;
+  }
+  
+  .main-content {
+    padding: 20px;
+}
+
+.section-conatiner {
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0px 1px px rgba(0, 0, 0, 0.1);
+}
+
+.container-fluid {
+    margin: 0 auto;
+    background-color: transparent;
+    max-width: 1200px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden; 
+
+    background-color: #270c0c;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td { 
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

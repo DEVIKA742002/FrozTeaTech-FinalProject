@@ -1,0 +1,108 @@
+<section>
+  <header>
+    <div class="logosec">
+      
+      <img src="assets/images/cofee logo.png" class="icn menuicn" id="menuicn" alt="menu-icon">
+      <div class="logo">FrozTeaTech!...</div>
+    </div>
+    
+    <div class="dp">
+
+      <img src="assets/images/vector-users-icon.jpg" class="dpicn" alt="dp">
+
+    </div>
+  </header>
+  <div class="main-container" style="background-image: url(assets/images/cuwal.jpg);background-size: cover;">
+    <div class="navcontainer">
+      <nav class="nav">
+        <div class="nav-upper-options">
+          <div class="nav-option option1">
+            <a routerLink="/admin/home">
+              <img src="assets/images/dashboard.png" class="nav-img" alt="dashboard">
+              <h3 style="margin-left: 20px">Dashboard</h3>
+            </a>
+          </div>
+
+         
+          <div class="option2 nav-option">
+            <a routerLink="/admin/customer/veiwall">
+              <img src="assets/images/customerlogo.png" class="nav-img" alt="articles">
+              <h3 style="margin-left: 20px">Show Customer</h3>
+            </a>
+          </div>
+          <div class="nav-option option3">
+            <a routerLink="/admin/order/veiwall">
+              <img src="assets/images/provider.png" class="nav-img" alt="report">
+              <h3 style="margin-left: 20px">Show Order</h3>
+            </a>
+          </div>
+          <div class="nav-option option4">
+            <a routerLink="/admin/payment/veiwall">
+              <img src="assets/images/provider1.png" class="nav-img" alt="institution">
+              <h3 style="margin-left: 20px">Show Payments</h3>
+            </a>
+          </div>
+          <div class="nav-option option5">
+            <a routerLink="/admin/menu">
+              <img src="assets/images/menu icon.jpg" class="nav-img" alt="institution">
+              <h3 style="margin-left: 20px">Show Menu</h3>
+            </a>
+          </div>
+          <div class="nav-option option6">
+            <a routerLink="/admin/login">
+              <img src="assets/images/logout.png" class="nav-img" alt="logout">
+              <h3 style="margin-left: 20px" (click)="logout()">Logout</h3>
+            </a>
+          </div>
+
+          
+
+
+        </div>
+      </nav>
+    </div>
+    <div class="main">
+      <h1 style="text-align: center;" >Welcome Admin!...</h1>
+      
+      <br><br><br>
+      <div class="box-container">
+        <div class="box box1">
+          <div class="text">
+            <h2 class="topic-heading"></h2>
+            <a routerLink="/admin/customer/veiwall" style="text-decoration: none; color: white">
+              <h2 class="topic" style="font-weight: bold">Show Customer</h2>
+            </a>
+          </div>
+          <img src="assets/images/customerlogo.png" alt="Views">
+        </div>
+        <div class="box box2">
+          <div class="text">
+            <h2 class="topic-heading"></h2>
+            <a routerLink="/admin/order/veiwall" style="text-decoration: none; color: white">
+              <h2 class="topic" style="font-weight: bold">Show Order</h2>
+            </a>
+          </div>
+          <img src="assets/images/provider.png" alt="likes">
+        </div>
+        <div class="box box3">
+          <div class="text">
+            <h2 class="topic-heading"></h2>
+            <a routerLink="/admin/menu" style="text-decoration: none; color: white">
+              <h2 class="topic" style="font-weight: bold">Show Menu</h2>
+            </a>
+          </div>
+          <img src="assets/images/menu icon.jpg" alt="likes">
+        </div>
+        <div class="box box4">
+          <div class="text">
+            <h2 class="topic-heading"></h2>
+            <a routerLink="/admin/payment/veiwall" style="text-decoration: none; color: white">
+              <h2 class="topic" style="font-weight: bold">Show Payments</h2>
+            </a>
+          </div>
+          <img src="assets/images/provider1.png" alt="comments">
+        </div>
+      </div>
+      
+
+    </div>

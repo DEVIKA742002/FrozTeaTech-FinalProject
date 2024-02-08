@@ -1,0 +1,82 @@
+<header >
+    <div class="logosec">
+        <img src="assets/images/cofee logo.png" class="icn menuicn" id="menuicn" alt="menu-icon">
+      <div class="logo"><strong>FrozTeaTech!...</strong></div>
+    </div>
+    <h4 style="margin-left: 70% "></h4>
+    <div class="dp">
+
+        <img src="assets/images/vector-users-icon.jpg" class="dpicn" alt="dp">
+
+    </div>
+</header>
+<div class="main-content" style="
+background-image: url('assets/images/updatemenubg.jpg');
+background-size:cover;
+background-position: center;
+background-repeat: no-repeat;
+padding-top: 10%;">
+<form #spForm="ngForm" (ngSubmit)="onSubmit()" class="menu-form">
+    <div class="form-title"><h1>Update Menu</h1></div>
+    
+    <div class="form-group">
+        <label>Item ID</label>
+        <input type="text" name="id" [(ngModel)]="menu.item_id" required pattern="^[0-9]+$" placeholder="Enter Item ID (digits only)" />
+        <div *ngIf="spForm.controls['id']?.invalid && (spForm.controls['id']?.dirty || spForm.controls['id']?.touched)">
+            <div *ngIf="spForm.controls['id']?.errors?.['required']">
+                Item ID is required.
+            </div>
+            <div *ngIf="spForm.controls['id']?.errors?.['pattern']">
+                Item ID must contain digits only.
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Item Name</label>
+        <input type="text" name="fname" [(ngModel)]="menu.fname" required minlength="3" pattern="^[a-zA-Z ]+$" placeholder="Enter Item Name (at least 3 letters, no digits)" />
+        <div *ngIf="spForm.controls['fname']?.invalid && (spForm.controls['fname']?.dirty || spForm.controls['fname']?.touched)">
+            <div *ngIf="spForm.controls['fname']?.errors?.['required']">
+                Item Name is required.
+            </div>
+            <div *ngIf="spForm.controls['fname']?.errors?.['minlength']">
+                Item Name must be at least 3 characters long.
+            </div>
+            <div *ngIf="spForm.controls['fname']?.errors?.['pattern']">
+                Item Name must not contain digits.
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Price</label>
+        <input type="number" name="price" [(ngModel)]="menu.price" required min="1" placeholder="Enter Price (minimum 1)" />
+        <div *ngIf="spForm.controls['price']?.invalid && (spForm.controls['price']?.dirty || spForm.controls['price']?.touched)">
+            <div *ngIf="spForm.controls['price']?.errors?.['required']">
+                Price is required.
+            </div>
+            <div *ngIf="spForm.controls['price']?.errors?.['min']">
+                Price must be at least 1.
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Item Image</label>
+        <input type="text" name="img" [(ngModel)]="menu.img" required placeholder="Enter Image URL" />
+        <div *ngIf="spForm.controls['img']?.invalid && (spForm.controls['img']?.dirty || spForm.controls['img']?.touched)">
+            <div *ngIf="spForm.controls['img']?.errors?.['required']">
+                Image URL is required.
+            </div>
+        </div>
+        <p class="note">Note: If the image is not visible, please check the image name.</p>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="spForm.invalid">Submit</button>
+        <button type="reset" class="btn btn-warning">Reset</button>
+        <button type="button" class="btn btn-info" routerLink="/admin/menu">Back</button>
+    </div>
+</form>
+</div>

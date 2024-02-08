@@ -1,0 +1,90 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+  <div class="logo">
+    
+        <img src="assets/images/logo.jpg" alt="Restaurant Logo" class="img-responsive">
+   
+</div>
+
+ 
+   <div class="spacer"></div>
+  <a mat-button style="margin-right: 10px;" routerLink="/customer/home">Home</a>
+  <a mat-button style="margin-right: 10px;" routerLink="/customer/myprofile">My Profile</a>
+  <a mat-button style="margin-right: 10px;" routerLink="/customer/menu">Menu</a>
+  <a mat-button style="margin-right: 10px;" routerLink="/customer/myorders">My Orders</a>
+  <a mat-button style="margin-right: 10px;" routerLink="/customer/mypayment">My Payments</a>
+  <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+ </mat-toolbar>
+   
+
+    <div style="
+    background-image: url('assets/images/wel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+   "> <div class="title_text" style="margin-bottom: 1%; ">
+      <h1 style="font-family:Arial, Helvetica, sans-serif;">Welcome <strong>{{customer.customerName}}</strong></h1>
+      <br>
+      <p>Select Services</p>
+    </div>
+      <div class="row">
+        <div class="column" style="margin-left: 15%; margin-right: 30px;">
+          <div class="container2" id="image1">
+            <a routerLink="/customer/menu" style="text-decoration: none; color: inherit;">
+              <img src="assets/images/menu.jpg" style="width: 400px; height: 200px"/>
+              <div class="overlay">
+                <div class="text1">
+                  <p>Click for Menu <span id="total_oldsoe"></span></p>
+                  
+                </div>
+              </div>
+              <div class="text">
+                <p>Resturant Menu</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="column" style="margin-left: 30px; margin-right: 15%;">
+          <div class="container2" id="image2">
+            <a routerLink="/customer/myorders" style="text-decoration: none; color: inherit;">
+              <img src="assets/images/order.jpg" style="width: 400px; height: 200px"/>
+              <div class="overlay">
+                <div class="text1">
+                  <p>My Orders <span id="total"></span></p>
+                 
+                </div>
+              </div>
+              <div class="text">
+                <p>Orders</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+       
+        
+      </div>
+    </div>
+
+  <section id="footer" style="margin-bottom: 20%;">
+    <div class="title_text">
+      <p>CONTACT US</p>
+      <h3>Visit Our Website Today</h3>
+    </div>
+    <div class="footer_row">
+      <div class="footer_left">
+        <h1>Working Hours</h1>
+        <p><i class="fas fa-clock"></i>Monday to Friday- 10:00 am to 10:00 pm</p>
+        <p><i class="fas fa-clock"></i>Saturday and Sunday - 11:00 am to 11:00 pm</p>
+      </div>
+      <div class="footer_right">
+        <h1>Get In Touch</h1>
+        <p>atharvtaware@gmail.com<i class="fas fa-paper-plane"></i></p>
+        <p>Pune Mahrashtra<i class="fas fa-map-marker-alt"></i></p>
+        <p>+91 7218945407<i class="fas fa-phone"></i></p>
+      </div>
+    </div>
+  </section>
+

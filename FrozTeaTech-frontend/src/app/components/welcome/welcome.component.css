@@ -1,0 +1,485 @@
+
+
+
+.logo{
+  height: 80px;
+  width: 67px;
+  border-radius: 50%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #banner-text {
+    text-align: center;
+    color: black;
+    padding-top: 260px;
+  }
+  
+  #banner-text h1 {
+    font-size: 100px;
+  }
+  
+  #banner-text p {
+    font-size: 20px;
+  }
+  
+  .b_button {
+    margin: 10px auto;
+    margin-left: 0px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+  }
+  .b_button button {
+    background-color: #0b5786;
+    color:white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .b_button button:hover {
+    background-color: #45a049;
+  }
+  
+  .b_button a {
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 3px;
+    padding: 10px 0;
+    color: #fff;
+    border: 0.5px solid rebeccapurple;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
+  }
+  
+  .b_button a span {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  
+  .b_button a:hover span {
+    width: 100%;
+  }
+  
+  .b_button a:hover {
+    color: #000;
+  }
+  
+  /*Banner Section Ends*/
+  
+  #logo {
+    position: absolute;
+    top: 4%;
+    left: 10%;
+  }
+  
+  #AboutUs {
+    width: 100%;
+    padding: 70px 0;
+  }
+  
+  .title {
+    text-align: center;
+    padding-bottom: 70px;
+  }
+  
+  .title p {
+    font-size: 30px;
+    margin: auto;
+    color: #31f9e5;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .title p::after {
+    content: "";
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#9d2da5, #fff);
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(4deg);
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+  
+  .title h1 {
+    font-size: 50px;
+  }
+  
+  #span {
+    position: absolute;
+    right: 0px;
+    margin-right: 30px;
+    background-color: white;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #009688;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 20%;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .overlay a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 60px;
+  }
+  
+  .title_text {
+    text-align: center;
+    padding-bottom: 100x;
+  }
+  
+  .title_text p {
+    font-size: 30px;
+    margin: auto;
+    color: #28e2cf;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .title_text p::after {
+    content: "";
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#14d7c3, #fff);
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(4deg);
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+  
+  .title_text h1 {
+    font-size: 50px;
+  }
+  
+  #features .title_text {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  #features .title_text p {
+    font-size: 30px;
+    margin: auto;
+    color: #610096;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .title_text h1 {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  
+  #features .title_text p::after {
+    content: "";
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#07ac98, #fff);
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(4deg);
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+  
+  .feature-box {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .features {
+    flex-basis: 50%;
+  }
+  
+  .features h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #009688;
+    padding-top: 16px;
+    padding-bottom: 6px;
+  }
+  
+  .feature-img {
+    flex-basis: 50%;
+    margin: auto;
+  }
+  
+  .feature-img img {
+    width: 95%;
+    border-radius: 10px;
+  }
+  
+  .features desc {
+    align-items: center;
+    margin-bottom: 40px;
+    display: flex;
+  }
+  
+  .feature-icon .fa {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+    text-align: center;
+  }
+  .feature-text p {
+    font-size: 15px;
+    padding: 0 10px 0 10px;
+    text-align: initial;
+    margin: -60px 0px 0px 50px;
+  }
+  
+  /*Features Section Ends*/
+  
+  /*Team Section Starts*/
+  
+  #Team {
+    width: 100%;
+    padding: 70px 0;
+    background-color: #efefef;
+  }
+  
+  .image {
+    position: relative;
+    width: 50%;
+    max-width: 300px;
+    margin-left: 50px;
+  }
+  .image img {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    border-radius: 7px;
+  }
+  .image .image-content {
+    width: 600px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease 0s;
+  }
+  .image:hover .image-content {
+    background-color: rgba(45, 207, 236, 0.4);
+  }
+  .image .image-content:after,
+  .image .image-content:before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.6s ease 0.3s;
+  }
+  .image .image-content:before {
+    border-left: 4px solid white;
+    border-top: 4px solid white;
+    top: 19px;
+    left: 19px;
+  }
+  .image .image-content:after {
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    bottom: 19px;
+    right: 19px;
+  }
+  .image:hover .image-content:after,
+  .image:hover .image-content:before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .image .title {
+    font-size: 22px;
+    color: white;
+    margin: 0;
+    position: relative;
+    top: 0;
+    opacity: 0;
+    transition: all 1s ease 10ms;
+    text-align: center;
+  }
+  .image:hover .title {
+    top: 39%;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(1, -0.53, 0.405, 1.425) 10ms;
+  }
+  .image .title:after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 1s ease 0s;
+  }
+  .image:hover .title:after {
+    width: 80%;
+    transition: all 1s ease 0.8s;
+  }
+  
+  .col {
+    flex: 50%;
+    padding: 5px;
+  }
+  .row {
+    display: flex;
+  }
+  .row2 {
+    display: flex;
+  }
+  
+  /*Team Section Ends*/
+  
+  /*Footer Section Starts*/
+  
+  #footer {
+    padding: 50px 0 20px;
+    background: #efefef;
+  }
+  
+  .footer_row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer_left,
+  .footer_right {
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .footer_right {
+    text-align: right;
+  }
+  
+  .footer_row h1 {
+    margin: 10px 0;
+  }
+  
+  .footer_row p {
+    line-height: 35px;
+  }
+  
+  .footer_left .fas,
+  .footer_right .fas {
+    font-size: 20px;
+    margin: 10px;
+    color: #a01eb4;
+  }
+  
+  .Social_links {
+    text-align: center;
+  }
+  
+  .Social_links .fab {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    border: 2px solid #009688;
+    cursor: pointer;
+    margin: 40px 5px 0;
+    color: #001696;
+    transition: 0.5s;
+  }
+  .Social_links .fab:hover {
+    background: #009688;
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  /*Footer Section Ends*/
+  

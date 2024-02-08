@@ -1,0 +1,105 @@
+<section>
+    <header>
+        <div class="logosec">
+            <img src="assets/images/cofee logo.png" class="icn menuicn" id="menuicn" alt="menu-icon">
+            <div class="logo">FrozTeaTech!...</div>
+        </div>
+        <h4 style="margin-left: 70%"></h4>
+        <div class="dp">
+
+            <img src="assets/images/vector-users-icon.jpg" class="dpicn" alt="dp">
+
+        </div>
+    </header>
+    <div class="main-container" style="background-image: url(assets/images/ad8.png);background-size: cover;">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <a routerLink="/admin/home">
+                            <img src="assets/images/dashboard.png" class="nav-img" alt="dashboard">
+                            <h3 style="margin-left: 20px">Dashboard</h3>
+                        </a>
+                    </div>
+                    <div class="option2 nav-option">
+                        <a routerLink="/admin/customer/veiwall">
+                            <img src="assets/images/customerlogo.png" class="nav-img" alt="articles">
+                            <h3 style="margin-left: 20px">Show Customer</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option3">
+                        <a routerLink="/admin/order/veiwall">
+                            <img src="assets/images/provider.png" class="nav-img" alt="report">
+                            <h3 style="margin-left: 20px">Show Order</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option4">
+                        <a routerLink="/admin/payment/veiwall">
+                            <img src="assets/images/provider1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Payments</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option5">
+                        <a routerLink="/admin/menu">
+                            <img src="assets/images/menu icon.jpg" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Menu</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option6">
+                        <a (click)="addMenu()">
+                            <img src="assets/images/menu icon.jpg" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Add Menu</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option7">
+                        <a (click)="logout()">
+                            <img src="assets/images/logout.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Logout</h3>
+                        </a>
+                    </div>
+                    
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="title-container">
+                <h3>All Menu</h3>
+            </div>
+            <div class="box-container">
+                
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                          <table class='table'>
+                            <thead>
+                                <tr class='table-dark'>
+                                    <th>ID</th>
+                                    <th>ITEM</th>
+                                    <th>PRICE</th>
+                                    <th>IMAGE</th>
+                                    <th></th>
+                                </tr>
+                        
+                            </thead>
+                            <tr *ngFor="let tempmenu of menu | paginate: { itemsPerPage: count, currentPage: p }">
+                                <td>{{tempmenu.item_id}}</td>
+                                <td>{{tempmenu.fname}}</td>
+                                <td>{{tempmenu.price}}</td>
+                                <td><img src="{{ tempmenu.img }}" alt="{{ tempmenu.fname }}" class="menu-image" style="height: 80px; width:150px;"></td>
+                                <td><button type="button" class="btn btn-md btn-danger" (click) = "deleteMenu(tempmenu.item_id)">Delete</button>
+                                <button type="button" class="btn btn-md btn-success" (click)="updateMenu(tempmenu.item_id)">Update</button>&nbsp;&nbsp;</td>
+            
+                            </tr>
+                        </table>  
+                        <div class="text-right mt-3" style="margin-top: 20px;">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>  
+                        </div>
+                        <!-- <button class="atu-btn-submit btn btn-info" (click) = "addMenu()" >Add Item</button> -->
+            
+                    </div>
+                </div>
+
+        </div>

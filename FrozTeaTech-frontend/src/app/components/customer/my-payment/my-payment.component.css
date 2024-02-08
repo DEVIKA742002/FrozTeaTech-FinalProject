@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+.spacer {
+    flex: 1 1 auto;
+  }
+  .logo{
+    margin-left: 0px;
+    margin-top: 30px;
+    width: 90px;
+    height: 80px;
+  }
+
+.main-conatiner {
+    padding: 20px;
+}
+
+.section-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.container-fluid {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.my-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

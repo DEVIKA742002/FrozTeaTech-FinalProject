@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <span><mat-icon>eco</mat-icon> Menu</span>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/customer/home">Home</a>
+  <a mat-button routerLink="/customer/myprofile">My Profile</a>
+  <a mat-button routerLink="/customer/menu">Menu</a>
+  <a mat-button routerLink="/customer/myorders">My Orders</a>
+  <a mat-button routerLink="/customer/mypayment">My Payments</a>
+  <a mat-raised-button color="accent" (click)="logout()">Logout</a>
+</mat-toolbar>
+<div style="
+background-image: url('assets/images/menubg2.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center; /* Vertically center the container */
+height: 91.3vh; /* Set the height of the container to fill the viewport */
+overflow: hidden;
+background-attachment: fixed;
+">
+
+
+<div class="main-content" >
+  <div>
+    <div class="container-fluid">
+        <div class="content" style="margin-right: 500px;margin-bottom: 100px">
+          <div >
+                <div class="menu-container" style="height: 600px ; width: 600px;">
+                  <img style="margin-top: 20px; border-radius: 10px;" src="{{ menu.img }}" alt="{{ menu.fname }}" class="menu-image">
+                  <h4 class="menu-item"><strong>{{ menu.fname }}</strong> </h4>
+                  <p class="menu-price"><strong>{{ menu.price }} ₹</strong> </p>
+                <form>
+                  <div class="form-group">
+                    <label for="quantity"><strong>Quantity:</strong></label>
+                    <div class="input-container">
+                      <input type="number" id="quantity" name="quantity" class="form-control" [(ngModel)]="quantity" required min="1">
+                    </div>
+                  </div>
+                  <button type="button" class="order-button" (click)="placeOrder()">Order</button>
+                </form>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

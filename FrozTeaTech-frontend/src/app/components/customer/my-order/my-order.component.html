@@ -1,0 +1,62 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+    <div class="logo">
+      
+        <img src="assets\images\cofee logo.png" alt="Logo" class="img-responsive">
+     
+  </div>
+  
+   
+     <div class="spacer"></div>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/home">Home</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/myprofile">My Profile</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/menu">Menu</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/myorders">My Orders</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/customer/mypayment">My Payments</a>
+    <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+   </mat-toolbar>
+   <div class="main-content" style="
+   background-image: url('assets/images/wel.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+    height: 50vh;
+    overflow: hidden;
+
+  ">
+    <div class="section-conatiner section-content-p30">
+        <div class="container-fluid">
+            <h2 class="text-center my-4">My Orders</h2>
+            
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="text-center">OrderID</th>
+                            <th class="text-center">Customer</th>
+                            <th class="text-center">Order Date</th>
+                            <th class="text-center">Order Time</th>
+                            <th class="text-center">Menu Item</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Total Price</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let temporder of order | paginate: { itemsPerPage: count, currentPage: p }">
+                        <td class="text-center">{{ temporder.orderId }}</td>
+                        <td class="text-center">{{ temporder.customer.customerName }}</td>
+                        <td class="text-center">{{ temporder.orderDate }}</td>
+                        <td class="text-center">{{ temporder.orderTime }}</td>
+                        <td class="text-center">{{ temporder.menu.fname }}</td>
+                        <td class="text-center">{{ temporder.quantity }}</td>
+                        <td class="text-center">{{ temporder.totalPrice }}</td>
+                        <td class="text-center">{{ temporder.status }}</td>
+                    </tr>
+                </table>
+                <div class="text-right mt-3">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
